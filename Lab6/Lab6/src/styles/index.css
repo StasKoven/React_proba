@@ -1,0 +1,158 @@
+:root {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1f1f1f;
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #282c34;
+}
+
+a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e3e6f0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.text-and-input {
+  flex-grow: 1;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.todo-text {
+  display: block;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input-error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.9;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.add-todo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-todo-container input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.add-todo-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-todo-container button:hover {
+  background-color: #0056b3;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #333;
+    background-color: #ffffff;
+  }
+  button {
+    background-color: #f0f0f0;
+  }
+}
