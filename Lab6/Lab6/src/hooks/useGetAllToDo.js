@@ -1,31 +1,32 @@
-import { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react"
+import useTodos from './useTodos'
 const useGetAllToDo = () => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
+
+
+    const { todos, setTodos, addTodo, removeTodo, handleSearch } = useTodos()
 
     useEffect(() => {
-        setIsLoading(true);
+        setIsLoading(true)
 
         const fetchData = async () => {
-        try {
-            fetch("https://jsonplaceholder.typicode.com/todos")
-            .then(response => response.json())
-            .then(json => {
-            setData(json);
-            setIsLoading(false);
-            });
-        } catch (error) {
-            setError(error);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-    fetchData();
-    }, []);
+            try {
+                const response = await fetch("https://jsonplaceholder.typicode.com/todos")
+                const data = await response.json()
+                setTodos(data)
+                setIsLoading(false)
+            } catch (error) {
+                setError(error)
+            } finally {
+                setIsLoading(false)
+            }
+        };
 
-    return { isLoading, data, error };
+        fetchData()
+    }, [setTodos])
+
+    return { isLoading, todos, error, addTodo, removeTodo, handleSearch }
 };
 
-export default useGetAllToDo;
+export default useGetAllToDo

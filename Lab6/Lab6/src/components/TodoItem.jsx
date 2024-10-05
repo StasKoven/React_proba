@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const TodoItem = ({ todo, onRemove, onEdit }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editTitle, setEditTitle] = useState(todo.title);
-  const [error, setError] = useState('');
+  const [isEditing, setIsEditing] = useState(false)
+  const [editTitle, setEditTitle] = useState(todo.title)
+  const [error, setError] = useState('')
 
   const handleEditClick = () => {
     if (isEditing) {
       if (editTitle.trim() === '') {
-        setError('Title is required');
+        setError('Title is required')
         return;
       }
+      if (editTitle !== todo.title) {
+        onEdit(todo.id, editTitle)
+      }
       setError('');
-      onEdit(todo.id, editTitle);
     }
-    setIsEditing(!isEditing);
+    setIsEditing(!isEditing)
   };
 
   const handleInputChange = (e) => {
@@ -50,4 +52,4 @@ const TodoItem = ({ todo, onRemove, onEdit }) => {
   );
 };
 
-export default TodoItem;
+export default TodoItem
