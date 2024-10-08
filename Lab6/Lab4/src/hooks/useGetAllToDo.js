@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useGetAllToDo = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(useTodos);
     const [error, setError] = useState(null);
 
     useEffect(() => {

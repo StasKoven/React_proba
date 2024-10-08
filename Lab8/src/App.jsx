@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import AddressForm from './components/AddressForm';
-import AddressTable from './components/AddressTable';
+import React, { useState } from 'react'
+import AddressForm from './components/AddressForm'
+import AddressTable from './components/AddressTable'
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -35,13 +35,13 @@ const App = () => {
           type="text"
           placeholder="Search by name..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} 
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
       <AddressForm addContact={addContact} editContact={editContact} updateContact={updateContact} />
       <AddressTable contacts={contacts} setEditContact={setEditContact} />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -10,8 +10,8 @@ const Layout = () => {
   const { isLoading, data, error } = useGetAllToDo();
 
   useEffect(() => {
-    if (data) {
-      setTodos(data);
+    if (todos) {
+      setTodos(todos);
     }
   }, [data, setTodos]);
 
