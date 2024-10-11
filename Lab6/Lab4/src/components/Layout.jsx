@@ -10,10 +10,11 @@ const Layout = () => {
   const { isLoading, data, error } = useGetAllToDo();
 
   useEffect(() => {
-    if (todos) {
-      setTodos(todos);
+    if (data && data.length > 0) {
+      setTodos(data);
     }
   }, [data, setTodos]);
+
 
   return (
     <div className="layout">
